@@ -43,20 +43,27 @@ props: {
 </script>
 
 <template>
-    <div class="card" style="width: 18rem;">
-        <img :src="image_url" class="card-img-top" :alt="title">
-        <div class="card-body">
-            <h5 class="card-title">{{ title }}</h5>
-            <h6>Language: <span class="badge text-bg-secondary">{{ language }}</span></h6>
-            <div>
-                <span v-for="technology in technologies" class="badge text-bg-primary mx-1">{{ technology.name }}</span>
+    <div class="container-fluid my-4">
+        <div class="row justify-content-center">
+            <div class="card col-4" style="width: 18rem;">
+                <img :src="image_url" class="card-img-top p-2" :alt="title">
+                <div class="card-body">
+                    <h5 class="card-title">{{ title }}</h5>
+                    <h6>Language: <span class="badge text-bg-secondary">{{ language }}</span></h6>
+                    <div>
+                        <span v-for="technology in technologies" class="badge text-bg-primary mx-1">{{ technology.name }}</span>
+                    </div>
+                    <div>
+                        <span class="badge text-bg-success mx-1">{{ type.name }}</span>
+                    </div>
+                    <p class="card-text">{{ content }}</p>
+                    <a :href="website" class="btn btn-primary">website</a>
+                </div>
             </div>
-            <p class="card-text">{{ content }}</p>
-            <a :href="website" class="btn btn-primary">website</a>
         </div>
     </div>
 </template>
 
 <style scoped>
-
+    
 </style>
