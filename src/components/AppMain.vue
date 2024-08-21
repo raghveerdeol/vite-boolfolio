@@ -1,40 +1,22 @@
 <script>
+import ProjectList from './ProjectList.vue';
 import axios from 'axios';
 
 export default {
 data() {
 return {
-    projects: [],
+    
 }
 },
-methods:{
-    getProjects(){
-        axios.get('http://127.0.0.1:8000/api/projects', {
-            params: {
+components:{
+    ProjectList
+}
+}
 
-            }
-        })
-        .then((response) => {
-            console.log(response.data.results.data);
-            this.projects = response.data.results.data;
-        })
-        .catch(function (error){
-            console.log(error);
-        })
-    }
-},
-created(){
-    this.getProjects();
-}
-}
 </script>
 
 <template>
-    <ul>
-        <li v-for="project in projects">
-            {{ project.title }}
-        </li> 
-    </ul>
+    <ProjectList/>
 </template>
 
 <style scoped>
