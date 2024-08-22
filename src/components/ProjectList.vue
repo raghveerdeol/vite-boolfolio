@@ -39,8 +39,9 @@ created(){
 </script>
 
 <template>
-
-    <ProjectCard v-for="project in projects" :title="project.title" :content="project.content" :language="project.language" :finished="project.finished" :image_url="project.image_url" :website="project.website_url" :technologies="project.technologies" :type="project.type" />
+    <router-link v-for="project in projects" :to="{name: 'single-project', params: { id: project.id}}" class="text-decoration-none">
+        <ProjectCard  :title="project.title" :content="project.content" :language="project.language" :finished="project.finished" :image_url="project.image_url" :website="project.website_url" :technologies="project.technologies" :type="project.type" />
+    </router-link>
 </template>
 
 <style scoped>
